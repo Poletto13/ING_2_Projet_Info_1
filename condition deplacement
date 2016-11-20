@@ -1,0 +1,29 @@
+    /// Placer un pion au début sur le plateau (blindage) : Voici toute la démarche à suivre lorsque le joueur place son pion
+
+    string coord_joueur; // récupère coordonnées joueur : Partie Léa
+    unsigned char ligne_joueur;
+    unsigned char colonne_joueur;
+
+    if ((Plateau["B2"]!=Plateau[coord_joueur])||(Plateau["B3"]!=Plateau[coord_joueur])||(Plateau["B4"]!=Plateau[coord_joueur])||(Plateau["C1"]!=Plateau[coord_joueur])||(Plateau["C2"]!=Plateau[coord_joueur])||(Plateau["C3"]!=Plateau[coord_joueur])||(Plateau["D2"]!=Plateau[coord_joueur])||(Plateau["D3"]!=Plateau[coord_joueur])||(Plateau["D4"]!=Plateau[coord_joueur]))
+    {
+        cout<<"Impossible! Placez votre pion sur l'une des cases exterieures du plateau";
+        // ici : redemander les coordonnées du joueur
+
+    }
+    else // c'est ok regardons mainteant si la case est bien libre
+    {
+        if Case(ligne_joueur,colonne_joueur,_libre).get_libre() == true; // c'est ok
+        {
+            Case(ligne_joueur,colonne_joueur,_libre).set_libre(false) // la case devient alors occupé par son pion
+
+            //include joueur.h
+            m_pieces = m_pieces - 1; // à adapter avec une méthode joueur
+        }
+        else // si la case est occupée
+        {
+            cout<<"Impossible! la case n'est pas libre";
+            // ici : redemander les coordonnées du joueur
+        }
+    }
+
+    /// Déplacer un pion déjà sur le plateau (à faire)
